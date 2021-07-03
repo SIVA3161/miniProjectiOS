@@ -9,12 +9,12 @@ import Foundation
 
 
 
-struct RepoParsed: Decodable {
+struct RepoParsed: Codable {
     var items: [Item]
 }
 
 
-struct Item: Decodable {
+struct Item: Codable {
     var full_name: String
     var owner: Owner
     var description: String
@@ -22,7 +22,7 @@ struct Item: Decodable {
 }
 
 //   Siva G : ====> <====
-struct Owner: Decodable {
+struct Owner: Codable {
     var login: String
     var avatar_url: String
 }
