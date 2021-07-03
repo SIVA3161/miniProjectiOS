@@ -92,7 +92,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
      }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RepoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoTableViewCell", for: indexPath) as! RepoTableViewCell
         let RepoArr = searchResults[indexPath.row]
         
         cell.fullName.text = RepoArr.full_name
@@ -105,7 +105,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
         }
-        
         
         return cell
     }
