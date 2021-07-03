@@ -9,6 +9,11 @@ import UIKit
 
 class RepoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var avatarImg: UIImageView!
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var loginLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
