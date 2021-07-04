@@ -12,7 +12,7 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    let spinner = UIActivityIndicatorView()
+    let spinner = UIActivityIndicatorView(style: .large)
      
     
     
@@ -36,10 +36,11 @@ class ViewController: UIViewController {
         
         
         //   Siva G : ====>Helps to dismiss the iOS keyboard when tapping anywhere outside the keyboard <====
+        //   Siva G : ====> Do not use it to u'r wish...It affects RowDidSelected func <====
         
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-               view.addGestureRecognizer(tap)
-        
+//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+//               view.addGestureRecognizer(tap)
+//
       
     }
        
@@ -73,17 +74,18 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate,UISearchBar
             
         }
         cell.avatarImg.layer.cornerRadius = 40.0
-        cell.avatarImg.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        cell.avatarImg.layer.borderColor =  #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         cell.avatarImg.layer.borderWidth = 2.0
-
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Did seleted")
         if let url = URL(string: searchResults[indexPath.row].html_url) {
             let safariVC = SFSafariViewController(url: url)
-            present(safariVC, animated:  true,completion: nil)
-            print("Hi")
+            present(safariVC, animated:  true, completion: nil)
+            
+        
         }
     }
     
@@ -92,7 +94,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate,UISearchBar
      func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
          searchBar.endEditing(true)
          spinner.startAnimating()
-        spinner.color = .blue
+         spinner.color = .green
+        
          tableView.backgroundView = spinner
          guard let searchBarText = searchBar.text else {
              return
@@ -109,14 +112,5 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate,UISearchBar
          tableView.reloadData()
      }
      
-//     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//         if searchBar.text?.count == 0 {
-//             searchResults = []
-//             DispatchQueue.main.async {
-//                 searchBar.resignFirstResponder()
-//                 self.spinner.isHidden = true
-//             }
-//         }
-//     }
-      
+ 
 }
