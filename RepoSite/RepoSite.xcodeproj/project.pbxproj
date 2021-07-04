@@ -76,7 +76,6 @@
 				09BB2FC826903C3100657F27 /* ViewModel */,
 				09BB2FB326903C1E00657F27 /* AppDelegate.swift */,
 				09BB2FB526903C1E00657F27 /* SceneDelegate.swift */,
-				09BB2FB926903C1E00657F27 /* Main.storyboard */,
 				09BB2FBC26903C1E00657F27 /* Assets.xcassets */,
 				09BB2FBE26903C1E00657F27 /* LaunchScreen.storyboard */,
 				09BB2FC126903C1E00657F27 /* Info.plist */,
@@ -95,6 +94,7 @@
 		09BB2FC926903C4300657F27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09BB2FB926903C1E00657F27 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

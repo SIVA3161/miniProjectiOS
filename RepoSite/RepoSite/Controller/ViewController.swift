@@ -73,7 +73,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate,UISearchBar
             
         }
         cell.avatarImg.layer.cornerRadius = 40.0
-        cell.avatarImg.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        cell.avatarImg.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         cell.avatarImg.layer.borderWidth = 2.0
 
         return cell
