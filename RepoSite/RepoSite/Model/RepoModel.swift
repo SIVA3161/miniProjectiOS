@@ -17,7 +17,7 @@ struct RepoSiteURLController {
     let finalURL: URL
     
     init(userTIP: String) {
-        let baseURL = "https://api.github.com/search/repositories?q=\(userTIP)"
+        let baseURL = "https://api.github.com/search/repositories?q=\("\(userTIP)")"
         guard let finalURL = URL(string: baseURL) else {fatalError()}
         
         self.finalURL = finalURL
