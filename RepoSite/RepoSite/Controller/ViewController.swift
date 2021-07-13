@@ -64,10 +64,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate,UISearchBar
         let RepoArr = searchResults[indexPath.row]
         
         cell.fullName.text = RepoArr.full_name
-        cell.loginLbl.text = RepoArr.owner.login
+        cell.loginLbl.text = RepoArr.owner?.login
         cell.descriptionLbl.text = RepoArr.description
         
-        if let url = URL(string: (RepoArr.owner.avatar_url)) {
+        if let url = URL(string: (RepoArr.owner?.avatar_url)!) {
             if let img = try? Data(contentsOf: url) {
                 cell.avatarImg.image = UIImage (data: img)
             }
@@ -80,8 +80,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate,UISearchBar
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Did seleted")
-        if let url = URL(string: searchResults[indexPath.row].html_url) {
+        print("Table element Did selected")
+        if let url = URL(string: searchResults[indexPath.row].html_url!) {
             let safariVC = SFSafariViewController(url: url)
             present(safariVC, animated:  true, completion: nil)
             

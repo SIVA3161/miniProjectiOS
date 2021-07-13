@@ -33,7 +33,7 @@ struct RepoSiteURLController {
                 let decoder = JSONDecoder()
                 let repoResponse = try decoder.decode(RepoParsed.self, from: jsonData)
                 let repoDetails = repoResponse.items
-                completion(.success(repoDetails))
+                completion(.success(repoDetails!))
             } catch {
                 completion(.failure(.canNotProcessData))
             }

@@ -10,21 +10,30 @@ import Foundation
 
 
 struct RepoParsed: Decodable {
-    var items: [Item]
+    var items: [Item]?
 }
 
 
 struct Item: Decodable {
-    var full_name: String
-    var owner: Owner
-    var description: String
-    var html_url: String
+    var full_name: String?
+    var owner: Owner?
+    var description: String?
+    var html_url: String?
+    
+    private enum CodingKeys : String, CodingKey
+        {
+            case description = "description",
+                 full_name = "full_name",
+                 owner = "owner",
+                 html_url = "html_url"
+        }
+
 }
 
 //   Siva G : ====> <====
 struct Owner: Decodable {
     var login: String
-    var avatar_url: String
+    var avatar_url: String?
 }
 
 
